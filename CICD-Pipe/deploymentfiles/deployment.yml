@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mc-app
-        image: harikrishna7408/devopshubg33:XYZ
+        image: harikrishna7408/simple-python-app:XYZ
         ports:
         - containerPort: 8080
 
