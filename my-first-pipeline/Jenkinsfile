@@ -1,11 +1,14 @@
 pipeline {
   agent {
-    docker { image 'node:16-alpine' }
+    docker {
+      image 'harikrishna7408/maven-hari-docker-agent:v1'
+      args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+    }
   }
   stages {
-    stage('Test') {
+    stage('Build') {
       steps {
-        sh 'node --version'
+        sh 'mvn clean package'
       }
     }
   }
